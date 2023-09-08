@@ -8,21 +8,19 @@ export default function Button({ title, containerStyle, onPress, disabled = fals
     const width=Dimensions.get("window").width
 
     return (
-        <View style={{ width, paddingHorizontal:20 }}>
+        <View style={{ width, paddingHorizontal:20,alignItems:'center' }}>
             <TouchableOpacity
                 style={disabled ? {
-                    width: "100%",
-                    height: 60,
-                    backgroundColor: '#00000080',
+                    height: 56,
+                    backgroundColor: '#3D195B',
                     borderRadius: 10,
                     justifyContent: "center",
                     alignItems: "center",
                     ...containerStyle,
                 } :
                     {
-                        width: "100%",
-                        height: 60,
-                        backgroundColor: "#000",
+                        height: 56,
+                        backgroundColor: "#3D195B",
                         borderRadius: 10,
                         justifyContent: "center",
                         alignItems: "center",

@@ -1,8 +1,9 @@
 import { useRouter } from 'expo-router';
 import React, { useState } from 'react';
-import { Dimensions, View } from 'react-native';
+import { Dimensions, Image, Text, View } from 'react-native';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import Button from '../components/Button';
 import InputField from '../components/InputField';
 import Eye from '../svg/Eye';
 import EyeOff from '../svg/EyeOff';
@@ -27,13 +28,14 @@ const Login = () => {
   return (
     <View style={{ flex: 1, }}>
         <SafeAreaView style={{ flex: 1,backgroundColor:'#FFFFFF' }}>
-          <View style={{ flex: 1, justifyContent: 'center', paddingHorizontal: 20, gap: 20 }}>
-            {/* <Text style={{ marginTop: 20, fontSize: 35 }}>L o g i n</Text> */}
+          <View style={{ flex: 1, alignItems:'center', justifyContent:'center', paddingHorizontal: 20, gap: 20 }}>
 
-            {/* <Image source={require("../assets/Logo.png")} style={{ width: 189, height: 71 }} /> */}
-
+            <Image source={require("../assets/Logo.png")} style={{ width: 96, height: 96 }} />
+            <View style={{width:'100%', alignItems: 'flex-start' }}>
+            <Text style={{ fontSize: 18, textAlign: 'left',marginTop:10,fontWeight:"bold" }}>Welcome back!</Text>
+          </View>
             <InputField
-              placeholder="Email"
+              placeholder="Email address"
               inputStyles={{ backgroundColor:"#F4F4F5" }}
               onChangeText={(text) => setEmail(text)}
             />
@@ -50,6 +52,13 @@ const Login = () => {
               }
               contaynerStyle={{ marginBottom: 16 }}
               onChangeText={(text) => setPassword(text)}
+            />
+             <Button
+              title={"Login"}
+              containerStyle={{width:182,marginTop:20 }}
+              // onPress={() => loginHandler()}
+              onPress={() => router.push("/home")}
+              isLoading={false}
             />
           </View>
         </SafeAreaView>

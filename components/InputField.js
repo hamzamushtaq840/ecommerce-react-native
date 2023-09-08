@@ -19,9 +19,9 @@ export default function InputField({
             <View
                 style={{
                     width: "100%",
-                    height: 60,
+                    height: 56,
                     backgroundColor: '#fff',
-                    borderRadius: 10,
+                    borderRadius: 16,
                     paddingLeft: 20,
                     justifyContent: "center",
                     paddingVertical: 8,
