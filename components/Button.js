@@ -13,7 +13,7 @@ export default function Button({ title, containerStyle, onPress, disabled = fals
                 style={disabled ? {
                     height: 56,
                     backgroundColor: '#3D195B',
-                    borderRadius: 10,
+                    borderRadius: 16,
                     justifyContent: "center",
                     alignItems: "center",
                     ...containerStyle,
@@ -21,7 +21,7 @@ export default function Button({ title, containerStyle, onPress, disabled = fals
                     {
                         height: 56,
                         backgroundColor: "#3D195B",
-                        borderRadius: 10,
+                        borderRadius: 16,
                         justifyContent: "center",
                         alignItems: "center",
                         ...containerStyle,

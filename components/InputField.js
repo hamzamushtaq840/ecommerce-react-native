@@ -13,37 +13,47 @@ export default function InputField({
     title,
     onChangeText,
     value,
-    inputStyles
+    inputStyles,
+    propIcon
 }) {
     return (
-            <View
-                style={{
-                    width: "100%",
-                    height: 56,
-                    backgroundColor: '#fff',
-                    borderRadius: 16,
-                    paddingLeft: 20,
-                    justifyContent: "center",
-                    paddingVertical: 8,
-                    flexDirection: "row",
-                    alignItems: "center",
-                      ...inputStyles
-                }}
-            >
+        <View
+            style={{
+                width: "100%",
+                height: 56,
+                backgroundColor: '#fff',
+                borderRadius: 16,
+                paddingLeft: 20,
+                justifyContent: "center",
+                paddingVertical: 8,
+                flexDirection: "row",
+                alignItems: "center",
+                ...inputStyles
+            }}
+        >
+            {propIcon && ( // Conditionally render the custom SVG icon if propIcon is provided
                 <View
                     style={{
-                        flex: 1,
+                        marginRight: 10, // Adjust the margin as needed
                     }}
                 >
-                    <TextInput
-                        style={{ paddingRight: 20, width: "100%" }}
-                        placeholder={placeholder}
-                        secureTextEntry={secureTextEntry}
-                        onChangeText={onChangeText}
-                        defaultValue={value}
-                    />
+                    {propIcon}
                 </View>
-                {icon && icon}
+            )}
+            <View
+                style={{
+                    flex: 1,
+                }}
+            >
+                <TextInput
+                    style={{ paddingRight: 20, width: "100%" }}
+                    placeholder={placeholder}
+                    secureTextEntry={secureTextEntry}
+                    onChangeText={onChangeText}
+                    defaultValue={value}
+                />
             </View>
+            {icon && icon}
+        </View>
     );
 }
