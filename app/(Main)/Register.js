@@ -37,7 +37,7 @@ const Register = () => {
           <InputField placeholder="Password" secureTextEntry={!showPassword} inputStyles={{ backgroundColor: "#F4F4F5", marginTop: 32 }} propIcon={<TouchableWithoutFeedback onPress={togglePasswordVisibility}><View ><Lock /></View></TouchableWithoutFeedback>} icon={<TouchableWithoutFeedback onPress={togglePasswordVisibility}><View style={{ padding: 20 }}>{showPassword ? <EyeOff /> : <Eye />}</View></TouchableWithoutFeedback>} onChangeText={(text) => setPassword(text)} />
           <InputField placeholder="Confirm password" secureTextEntry={!showPassword} inputStyles={{ backgroundColor: "#F4F4F5", marginTop: 32 }} propIcon={<TouchableWithoutFeedback onPress={togglePasswordVisibility}><View ><Lock /></View></TouchableWithoutFeedback>} icon={<TouchableWithoutFeedback onPress={togglePasswordVisibility}><View style={{ padding: 20 }}>{showPassword ? <EyeOff /> : <Eye />}</View></TouchableWithoutFeedback>} onChangeText={(text) => setPassword(text)} />
           <View style={{ width: '100%', }}>
-            <Text style={{ fontSize: 13,textAlign:'center', marginTop: 8, marginBottom: 56 }}>By registering you agree to our<Text style={{ fontWeight: "600", }}> Terms and Conditions</Text></Text>
+            <Text style={{ fontSize: 13,textAlign:'center', marginTop: 16, marginBottom: 56 }}>By registering you agree to our<Text style={{ fontWeight: "600", }}> Terms and Conditions</Text></Text>
           </View>
           <Button title={"Register"} containerStyle={{ width: 182}} onPress={() => router.push("/Home")} isLoading={false}/>
           <Text onPress={() => router.push("/")} style={{ fontSize: 14, gap: 16, marginTop: 8, fontWeight: "600", marginBottom: 40 }}>Login</Text>
