@@ -9,6 +9,9 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@eva-design/eva": "^2.2.0",
+    "@ui-kitten/components": "^5.3.1",
+    "@ui-kitten/eva-icons": "^5.3.1",
     "expo": "^49.0.3",
     "expo-constants": "~14.4.2",
     "expo-linking": "~5.0.2",
