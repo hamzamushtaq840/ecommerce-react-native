@@ -424,7 +424,7 @@
               "primary": {
                 "borderColor": "color-primary-default-border",
                 "backgroundColor": "color-primary-default",
-                "textColor": "text-basic-color",
+                "textColor": "#ffffff",
                 "iconTintColor": "text-basic-color",
                 "state": {
                   "focused": {

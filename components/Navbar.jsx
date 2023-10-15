@@ -1,7 +1,7 @@
 import { Icon, Layout, useTheme } from '@ui-kitten/components';
 import React from 'react';
 import { StyleSheet, TouchableOpacity, View, Alert } from 'react-native';
-import useLayout from './../hooks/useLayout';
+import useLayout from '../hooks/useLayout';
 import { usePathname, useRouter } from 'expo-router';
 
 const Navbar = ({ style }) => {
@@ -21,19 +21,18 @@ const Navbar = ({ style }) => {
         },
         style,
       ]}>
-      <TouchableOpacity onPress={() => router.push('(Dashboard)/Home')} activeOpacity={0.7} style={styles.tab}>
+      <TouchableOpacity onPress={() => router.push('(Main)/Home')} activeOpacity={0.7} style={styles.tab}>
         <Icon
           pack="assets"
           name="home"
           style={[styles.icon, { tintColor: pathname === '/Home' ? theme['color-primary-500'] : '' }]}
         />
       </TouchableOpacity>
-
-      <TouchableOpacity onPress={() => router.push('(Dashboard)/Profile')} activeOpacity={0.7} style={styles.tab}>
+      <TouchableOpacity onPress={() => router.push('(Main)/Cart')} activeOpacity={0.7} style={styles.tab}>
         <Icon
           pack="assets"
           name="cart"
-          style={[styles.icon, { tintColor: pathname === '/Profile' ? '#F6D938' : '#889098' }]}
+          style={[styles.icon, { tintColor: pathname === '/Cart' ? theme['color-primary-500'] : '' }]}
         />
       </TouchableOpacity>
       <TouchableOpacity onPress={() => router.push('(Dashboard)/Profile')} activeOpacity={0.7} style={styles.tab}>

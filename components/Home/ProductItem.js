@@ -1,0 +1,45 @@
+import { useTheme } from '@ui-kitten/components';
+import React from 'react';
+import { Image, StyleSheet, TouchableOpacity, View } from 'react-native';
+import useLayout from './../../hooks/useLayout';
+import Text from './../generic/Text';
+
+
+const ProductItem = ({ item, onPress, style }) => {
+  const theme = useTheme();
+  const { width } = useLayout();
+  const { name, rate, image, amount } = item;
+
+  return (
+    <TouchableOpacity
+      activeOpacity={0.7}
+      style={[
+        styles.container,
+        { width: 280, height: 152, backgroundColor: "#ccc", borderRadius: 16, overflow: 'hidden' },
+        style,
+      ]}
+      onPress={onPress} >
+      <Image source={{ uri: image }} style={styles.image} />
+    </TouchableOpacity >
+  );
+};
+
+export default ProductItem;
+
+const styles = StyleSheet.create({
+  container: {
+    borderRadius: 16,
+  },
+  image: {
+    width: '100%',
+    aspectRatio: 1 / 1,
+    alignSelf: 'center',
+    borderRadius: 16
+  },
+  row: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginTop: 8,
+  },
+});

@@ -5,10 +5,10 @@ import Loading from "../svg/Loading";
 
 export default function Button({ title, containerStyle, onPress, disabled = false, isLoading }) {
 
-    const width=Dimensions.get("window").width
+    const width = Dimensions.get("window").width
 
     return (
-        <View style={{ width, paddingHorizontal:20,alignItems:'center' }}>
+        <View style={{ width, paddingHorizontal: 20, alignItems: 'center' }}>
             <TouchableOpacity
                 style={disabled ? {
                     height: 56,

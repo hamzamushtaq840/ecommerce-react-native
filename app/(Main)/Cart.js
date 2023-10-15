@@ -12,7 +12,6 @@ import NavigationAction from './../../components/generic/NavigationAction'
 import TabBarScrollable from './../../elements/TabBarScrollable'
 import ProductItem from '../../components/Home/ProductItem'
 import { View } from 'react-native'
-import { useRouter } from 'expo-router'
 
 
 export const data_products = [
@@ -64,10 +63,9 @@ const Home = () => {
   const { width } = useLayout();
   const styles = useStyleSheet(themedStyles);
   const [selected, setSelected] = React.useState(0);
-  const router = useRouter()
 
   const renderProduct = React.useCallback(({ item }) => {
-    return <ProductItem onPress={() => router.push('(Main)/SingleProductDetail')} item={item} style={styles.itemProduct} />;
+    return <ProductItem item={item} style={styles.itemProduct} />;
   }, []);
 
   return (
@@ -82,59 +80,8 @@ const Home = () => {
         accessoryRight={<NavigationAction marginHorizontal={6} height={20} width={16} icon="notifications" onPress={() => { console.log("notification"); }} />}
       />
       <Content contentContainerStyle={styles.content}>
-        <VStack padder border={10}>
-          <Input
-            placeholder={'Search'}
-            accessoryLeft={<Image source={require('./../../assets/icons/search.png')} marginHorizontal={10} style={{ width: 10, height: 10 }} />}
-            style={styles.userInput}
-          />
-        </VStack>
-        <TabBarScrollable tabs={DATA} activeIndex={selected} onChange={setSelected} style={styles.tabBar} />
-        <Image
-          source={Images.home.banner}
-          style={{ width: width, height: 240, alignSelf: 'center', marginTop: 32 }}
-        />
-        <VStack gap={12} mt={40}>
-          <View style={{ paddingHorizontal: 14, flexDirection: 'row', justifyContent: 'space-between' }}>
-            <Text style={{ fontSize: 20, fontWeight: 400 }}>List of deals of the week</Text>
-            <Text style={{ fontSize: 14, fontWeight: 400, color: '#959597' }}>See all</Text>
-          </View>
-          <FlatList
-            data={data_products || []}
-            renderItem={renderProduct}
-            horizontal
-            scrollEventThrottle={16}
-            keyExtractor={(i, _index) => `${_index}`}
-            style={{ flexGrow: 0 }}
-            snapToInterval={(width - 104) + 8}
-            decelerationRate="fast"
-            showsHorizontalScrollIndicator={false}
-            bounces={false}
-            pagingEnabled={false}
-            contentContainerStyle={styles.contentProduct}
-          />
-        </VStack>
-        <VStack gap={12} mt={20}>
-          <View style={{ paddingHorizontal: 14, flexDirection: 'row', justifyContent: 'space-between' }}>
-            <Text style={{ fontSize: 20, fontWeight: 400 }}>Promo by category</Text>
-            <Text style={{ fontSize: 14, fontWeight: 400, color: '#959597' }}>See all</Text>
-          </View>
-          <FlatList
-            data={data_products || []}
-            renderItem={renderProduct}
-            horizontal
-            scrollEventThrottle={16}
-            keyExtractor={(i, _index) => `${_index}`}
-            style={{ flexGrow: 0 }}
-            snapToInterval={(width - 104) + 8}
-            decelerationRate="fast"
-            showsHorizontalScrollIndicator={false}
-            bounces={false}
-            pagingEnabled={false}
-            contentContainerStyle={styles.contentProduct}
-          />
-        </VStack>
-      </Content>
+        <Text>Cart</Text>
+      </Content >
       <Navbar />
     </Container>
   )
