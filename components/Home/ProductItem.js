@@ -2,7 +2,7 @@ import { useTheme } from '@ui-kitten/components';
 import React from 'react';
 import { Image, StyleSheet, TouchableOpacity, View } from 'react-native';
 import useLayout from './../../hooks/useLayout';
-import Text from './../generic/Text';
+import Text from '../Generic/Text';
 
 
 const ProductItem = ({ item, onPress, style }) => {

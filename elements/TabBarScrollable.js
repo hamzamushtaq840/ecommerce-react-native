@@ -2,7 +2,7 @@ import { useTheme } from '@ui-kitten/components';
 import React from 'react';
 import { Image, ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
 import Animated from 'react-native-reanimated';
-import Text from './../components/generic/Text';
+import Text from '../components/Generic/Text';
 import useLayout from './../hooks/useLayout';
 
 const TabBar = ({ style, activeIndex, onChange, tabs }) => {

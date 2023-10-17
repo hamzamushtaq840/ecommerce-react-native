@@ -371,20 +371,20 @@
               },
               "apple": {
                 "borderColor": "transparent",
-                "backgroundColor": "#050708",
-                "textColor": "text-basic-color",
+                "backgroundColor": "#FAFAFA",
+                "textColor": "#959597",
                 "iconTintColor": "text-basic-color",
                 "state": {
                   "focused": {
-                    "borderColor": "color-basic-focus-border",
+                    "borderColor": "#ccc",
                     "backgroundColor": "color-basic-focus"
                   },
                   "hover": {
-                    "borderColor": "color-basic-hover-border",
+                    "borderColor": "#ccc",
                     "backgroundColor": "color-basic-hover"
                   },
                   "active": {
-                    "borderColor": "text-basic-color",
+                    "borderColor": "#ccc",
                     "backgroundColor": "transparent"
                   },
                   "disabled": {

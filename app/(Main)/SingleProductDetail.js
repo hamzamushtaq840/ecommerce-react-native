@@ -1,12 +1,12 @@
 import { TopNavigation, Icon, Button } from '@ui-kitten/components';
 import React, { useRef, useState } from 'react';
 import { Animated, Image, ScrollView, View } from 'react-native';
-import Container from '../../components/generic/Container';
-import Content from '../../components/generic/Content';
-import VStack from '../../components/generic/VStack';
-import HStack from '../../components/generic/HStack';
-import NavigationAction from '../../components/generic/NavigationAction';
-import Text from '../../components/generic/Text';
+import Container from '../../components/Generic/Container';
+import Content from '../../components/Generic/Content';
+import VStack from '../../components/Generic/VStack';
+import HStack from '../../components/Generic/HStack';
+import NavigationAction from '../../components/Generic/NavigationAction';
+import Text from '../../components/Generic/Text';
 import useLayout from '../../hooks/useLayout';
 import Svg, { Path } from "react-native-svg";
 import { useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';

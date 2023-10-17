@@ -35,25 +35,25 @@ const Navbar = ({ style }) => {
           style={[styles.icon, { tintColor: pathname === '/Cart' ? theme['color-primary-500'] : '' }]}
         />
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => router.push('(Dashboard)/Profile')} activeOpacity={0.7} style={styles.tab}>
+      <TouchableOpacity onPress={() => router.push('(Main)/Favourite')} activeOpacity={0.7} style={styles.tab}>
         <Icon
           pack="assets"
           name="heart"
-          style={[styles.icon, { tintColor: pathname === '/Profile' ? '#F6D938' : '#889098' }]}
+          style={[styles.icon, { tintColor: pathname === '/Favourite' ? theme['color-primary-500'] : '' }]}
         />
       </TouchableOpacity>
       <TouchableOpacity onPress={() => router.push('(Dashboard)/Profile')} activeOpacity={0.7} style={styles.tab}>
         <Icon
           pack="assets"
           name="comment"
-          style={[{ height: 20, width: 20 }, { tintColor: pathname === '/Profile' ? '#F6D938' : '#889098' }]}
+          style={[{ height: 20, width: 20 }, { tintColor: pathname === '/Profile' ? theme['color-primary-500'] : '' }]}
         />
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => router.push('(Dashboard)/Profile')} activeOpacity={0.7} style={styles.tab}>
+      <TouchableOpacity onPress={() => router.push('(Main)/NewCard')} activeOpacity={0.7} style={styles.tab}>
         <Icon
           pack="assets"
           name="profile"
-          style={[styles.icon, { tintColor: pathname === '/Profile' ? '#F6D938' : '#889098' }]}
+          style={[styles.icon, { tintColor: pathname === '/NewCard' ? theme['color-primary-500'] : '' }]}
         />
       </TouchableOpacity>
     </Layout>

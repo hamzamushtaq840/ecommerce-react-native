@@ -28,6 +28,7 @@ const IconsPack = {
     'comment': createIcon(Icons['comment']),
     'heart': createIcon(Icons['heart']),
     'profile': createIcon(Icons['profile']),
+    'delete': createIcon(Icons['delete']),
   },
 };
 export default IconsPack;

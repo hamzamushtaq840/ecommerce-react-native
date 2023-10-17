@@ -232,7 +232,7 @@ export const data_products = [
   },
 ];
 
-const Home = () => {
+const Favourite = () => {
   const { width, height } = useLayout();
   const styles = useStyleSheet(themedStyles);
   const [selected, setSelected] = React.useState(0);
@@ -248,11 +248,11 @@ const Home = () => {
     }}>
       <TopNavigation
         alignment="center"
-        title={<Text fontWeight="bold">Favourite</Text>}
+        title={<Text fontWeight="bold">Cart</Text>}
         accessoryLeft={<NavigationAction marginHorizontal={6} height={16} width={20} icon="menu" onPress={() => { console.log("menu"); }} />}
         accessoryRight={<NavigationAction marginHorizontal={6} height={20} width={16} icon="notifications" onPress={() => { console.log("notification"); }} />}
       />
-      <ScrollView style={{ flex: 1, maxHeight: height - 348, paddingHorizontal: 16 }}>
+      <ScrollView style={{ flex: 1, paddingHorizontal: 16 }}>
         <FlatList
           data={data_products}
           renderItem={renderProduct}
@@ -262,41 +262,6 @@ const Home = () => {
           contentContainerStyle={styles.contentContainerStyle}
         />
       </ScrollView>
-
-      <Animated.View style={[{ position: 'absolute', bottom: 64, width: width, paddingHorizontal: 28, paddingVertical: 20, height: 240 }]} >
-        <Text style={{ fontWeight: 'bold', fontSize: 14, color: '#959597', lineHeight: 20 }}>PAYMENT DETAILS</Text>
-
-        <VStack style={{ marginTop: 16 }} gap={8}>
-          <HStack >
-            <Text>Subtotal</Text>
-            <Text>$ 175.00</Text>
-          </HStack>
-          <HStack >
-            <Text>Tax</Text>
-            <Text>$ 1.75</Text>
-          </HStack>
-          <HStack style={{ marginTop: 8 }}>
-            <Text stle={{ fontWeight: 'bold', fontSize: 14 }}>Total</Text>
-            <Text>$ 176.75</Text>
-          </HStack>
-        </VStack>
-
-
-        <HStack style={{ marginTop: 40, alignItems: 'flex-end', flex: 1 }} gap={4}>
-          <Button
-            status={'apple'}
-            // size={'small'}
-            style={{ width: '50%', color: '#959597', backgroundColor: '#FAFAFA', borderColor: '#FAFAFA', alignSelf: 'center' }}
-            children={"Add More"}
-          />
-          <Button
-            status={'primary'}
-            // size={'small'}
-            style={{ width: '50%', textColor: 'white', alignSelf: 'center' }}
-            children={'Book Now'}
-          />
-        </HStack>
-      </Animated.View>
       <View style={{ position: 'absolute', bottom: 0, alignSelf: "end" }}>
         <Navbar />
       </View>
@@ -346,4 +311,4 @@ const themedStyles = StyleService.create({
 });
 
 
-export default Home
+export default Favourite

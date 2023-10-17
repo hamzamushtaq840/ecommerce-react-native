@@ -9,4 +9,5 @@ export const Icons = {
   'heart': require('./heart.png'),
   'profile': require('./profile.png'),
   'comment': require('./comment.png'),
+  'delete': require('./delete.png'),
 };
