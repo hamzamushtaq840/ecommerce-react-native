@@ -2,7 +2,7 @@ import { View, Text, TextInput } from "react-native";
 import React from "react";
 import { Shadow } from "react-native-shadow-2";
 
-import { COLORS, FONTS } from "../constants";
+import { FONTS } from "../constants/theme";
 
 export default function InputField({
     contaynerStyle,
@@ -46,7 +46,7 @@ export default function InputField({
                 }}
             >
                 <TextInput
-                    style={{ paddingRight: 20, width: "100%" }}
+                    style={{ paddingRight: 20, width: "100%", ...FONTS['400'] }}
                     placeholder={placeholder}
                     secureTextEntry={secureTextEntry}
                     onChangeText={onChangeText}

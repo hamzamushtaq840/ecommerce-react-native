@@ -26,6 +26,7 @@ const IconsPack = {
     'home': createIcon(Icons['home']),
     'cart': createIcon(Icons['cart']),
     'comment': createIcon(Icons['comment']),
+    'back': createIcon(Icons['back']),
     'heart': createIcon(Icons['heart']),
     'profile': createIcon(Icons['profile']),
     'delete': createIcon(Icons['delete']),

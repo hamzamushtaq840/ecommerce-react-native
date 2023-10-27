@@ -6,6 +6,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import Button from '../components/Button';
 import InputField from '../components/InputField';
 import Email from '../svg/Email';
+import { FONTS } from './../constants/theme'
 import Eye from '../svg/Eye';
 import EyeOff from '../svg/EyeOff';
 import Lock from '../svg/Lock';
@@ -31,23 +32,23 @@ const Login = () => {
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 20 }}>
           <Image source={require("../assets/Logo.png")} style={{ width: 96, height: 96 }} />
           <View style={{ width: '100%', alignItems: 'flex-start' }}>
-            <Text style={{ fontSize: 22, textAlign: 'left', marginTop: 80, fontWeight: "bold", marginBottom: 32 }}>Welcome back!</Text>
+            <Text style={{ ...FONTS['500'], lineHeight: 28, fontSize: 22, textAlign: 'left', marginTop: 80, marginBottom: 32 }}>Welcome back!</Text>
           </View>
           <InputField placeholder="Email address" inputStyles={{ backgroundColor: "#F4F4F5" }} onChangeText={(text) => setEmail(text)} propIcon={<TouchableWithoutFeedback onPress={togglePasswordVisibility}><View ><Email /></View></TouchableWithoutFeedback>} />
           <InputField placeholder="Password" secureTextEntry={!showPassword} inputStyles={{ backgroundColor: "#F4F4F5", marginTop: 32 }} propIcon={<TouchableWithoutFeedback onPress={togglePasswordVisibility}><View ><Lock /></View></TouchableWithoutFeedback>} icon={<TouchableWithoutFeedback onPress={togglePasswordVisibility}><View style={{ padding: 20 }}>{showPassword ? <EyeOff /> : <Eye />}</View></TouchableWithoutFeedback>} onChangeText={(text) => setPassword(text)} />
           <View style={{ width: '100%', alignItems: 'flex-end' }}>
-            <Text style={{ fontSize: 14, textAlign: 'right', marginBottom: 32, paddingHorizontal: 16 }}>Forgot your password?</Text>
+            <Text style={{ ...FONTS['400'], fontSize: 14, textAlign: 'right', marginBottom: 32, color: '#959597' }}>Forgot your password?</Text>
           </View>
-          <Button title={"Login"} containerStyle={{ width: 182, marginTop: 64 }} onPress={() => router.push("/Home")} isLoading={false}/>
-          <Text onPress={() => router.push("/Register")} style={{ fontSize: 14, gap: 16, marginTop: 8, fontWeight: "600", marginBottom: 40 }}>Register</Text>
+          <Button title={"Login"} containerStyle={{ width: 182, marginTop: 64 }} onPress={() => router.push("/Home")} isLoading={false} />
+          <Text onPress={() => router.push("/Register")} style={{ fontSize: 14, gap: 16, marginTop: 8, marginBottom: 40, ...FONTS['700'] }}>Register</Text>
           <View style={{ flexDirection: 'row', width: '100%', justifyContent: 'center' }}>
             <Image source={require("../assets/Facebook.png")} style={{ width: 40, height: 40 }} />
             <Image source={require("../assets/Google.png")} style={{ width: 40, height: 40 }} />
             <Image source={require("../assets/Apple.png")} style={{ width: 40, height: 40 }} />
           </View>
         </View>
-      </SafeAreaView>
-    </View>
+      </SafeAreaView >
+    </View >
   );
 };
 

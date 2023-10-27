@@ -1,17 +1,14 @@
 import { Button, StyleService, TopNavigation, useStyleSheet } from '@ui-kitten/components'
 import React from 'react'
-import { Animated, FlatList } from 'react-native'
+import { Animated, FlatList, ScrollView, View } from 'react-native'
 import ProductItem from '../../components/Cart/ProductItem'
 import Container from '../../components/Generic/Container'
-import Content from '../../components/Generic/Content'
 import HStack from '../../components/Generic/HStack'
 import NavigationAction from '../../components/Generic/NavigationAction'
 import Text from '../../components/Generic/Text'
 import VStack from '../../components/Generic/VStack'
 import Navbar from '../../components/Navbar'
 import useLayout from '../../hooks/useLayout'
-import { ScrollView } from 'react-native'
-import { View } from 'react-native'
 
 export const data_products = [
   {
@@ -248,7 +245,7 @@ const Home = () => {
     }}>
       <TopNavigation
         alignment="center"
-        title={<Text fontWeight="bold">Favourite</Text>}
+        title={<Text fontWeight="bold">Cart</Text>}
         accessoryLeft={<NavigationAction marginHorizontal={6} height={16} width={20} icon="menu" onPress={() => { console.log("menu"); }} />}
         accessoryRight={<NavigationAction marginHorizontal={6} height={20} width={16} icon="notifications" onPress={() => { console.log("notification"); }} />}
       />

@@ -248,7 +248,7 @@ const Favourite = () => {
     }}>
       <TopNavigation
         alignment="center"
-        title={<Text fontWeight="bold">Cart</Text>}
+        title={<Text fontWeight="bold">Favorite</Text>}
         accessoryLeft={<NavigationAction marginHorizontal={6} height={16} width={20} icon="menu" onPress={() => { console.log("menu"); }} />}
         accessoryRight={<NavigationAction marginHorizontal={6} height={20} width={16} icon="notifications" onPress={() => { console.log("notification"); }} />}
       />

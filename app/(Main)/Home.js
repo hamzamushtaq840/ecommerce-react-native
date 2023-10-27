@@ -1,19 +1,18 @@
 import { Input, StyleService, TopNavigation, useStyleSheet } from '@ui-kitten/components'
+import { useRouter } from 'expo-router'
 import React from 'react'
-import { FlatList, Image } from 'react-native'
-import Navbar from '../../components/Navbar'
+import { FlatList, Image, View } from 'react-native'
 import Container from '../../components/Generic/Container'
 import Text from '../../components/Generic/Text'
 import VStack from '../../components/Generic/VStack'
+import ProductItem from '../../components/Home/ProductItem'
+import Navbar from '../../components/Navbar'
+import { FONTS } from '../../constants/theme'
 import useLayout from '../../hooks/useLayout'
 import { Images } from './../../assets/images'
 import Content from './../../components/Generic/Content'
 import NavigationAction from './../../components/Generic/NavigationAction'
 import TabBarScrollable from './../../elements/TabBarScrollable'
-import ProductItem from '../../components/Home/ProductItem'
-import { View } from 'react-native'
-import { useRouter } from 'expo-router'
-
 
 export const data_products = [
   {
@@ -77,7 +76,7 @@ const Home = () => {
     }}>
       <TopNavigation
         alignment="center"
-        title={<Text fontWeight="bold">Home</Text>}
+        title={<Text style={{ ...FONTS['500'] }}>Home</Text>}
         accessoryLeft={<NavigationAction marginHorizontal={6} height={16} width={20} icon="menu" onPress={() => { console.log("menu"); }} />}
         accessoryRight={<NavigationAction marginHorizontal={6} height={20} width={16} icon="notifications" onPress={() => { console.log("notification"); }} />}
       />
@@ -96,7 +95,7 @@ const Home = () => {
         />
         <VStack gap={12} mt={40}>
           <View style={{ paddingHorizontal: 14, flexDirection: 'row', justifyContent: 'space-between' }}>
-            <Text style={{ fontSize: 20, fontWeight: 400 }}>List of deals of the week</Text>
+            <Text style={{ fontSize: 20, fontWeight: 'medium', fontFamily: 'Roboto-Black' }}>List of deals of the week</Text>
             <Text style={{ fontSize: 14, fontWeight: 400, color: '#959597' }}>See all</Text>
           </View>
           <FlatList
@@ -160,7 +159,8 @@ const themedStyles = StyleService.create({
   userInput: {
     flex: 1,
     borderRadius: 16,
-    marginTop: 10
+    marginTop: 10,
+    ...FONTS['400']
   },
   passwordInput: {
     flex: 1,

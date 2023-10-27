@@ -10,4 +10,5 @@ export const Icons = {
   'profile': require('./profile.png'),
   'comment': require('./comment.png'),
   'delete': require('./delete.png'),
+  'back': require('./back.png'),
 };

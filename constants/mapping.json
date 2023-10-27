@@ -1,6 +1,7 @@
 {
   "version": 1.0,
   "strict": {
+    "text-font-family": "Roboto-Thin100",
     "text-giant-0-font-size": 48,
     "text-giant-0-font-weight": "700",
     "text-heading-0-font-size": 36,

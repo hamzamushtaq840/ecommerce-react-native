@@ -1,9 +1,9 @@
 import { View, Text, TouchableOpacity, Image, Animated, Dimensions } from "react-native";
 import React, { useEffect, useRef } from "react";
-import { COLORS, FONTS } from "../constants";
+import { FONTS } from "../constants/theme";
 import Loading from "../svg/Loading";
 
-export default function Button({ title, containerStyle, onPress, disabled = false, isLoading }) {
+export default function Button({ title, containerStyle, onPress, disabled = false, isLoading, }) {
 
     const width = Dimensions.get("window").width
 
@@ -34,6 +34,7 @@ export default function Button({ title, containerStyle, onPress, disabled = fals
                     style={{
                         color: "#fff",
                         fontSize: 18,
+                        ...FONTS['700'],
                         textTransform: "capitalize",
                     }}
                 >
