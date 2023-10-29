@@ -75,8 +75,10 @@ const Home = () => {
       paddingBottom: 0,
     }}>
       <TopNavigation
+        titleFontFamily='Roboto-Bold700'
+        subtitleFontFamily='Roboto-Bold700'
         alignment="center"
-        title={<Text style={{ ...FONTS['500'] }}>Home</Text>}
+        title={<Text>Home</Text>}
         accessoryLeft={<NavigationAction marginHorizontal={6} height={16} width={20} icon="menu" onPress={() => { console.log("menu"); }} />}
         accessoryRight={<NavigationAction marginHorizontal={6} height={20} width={16} icon="notifications" onPress={() => { console.log("notification"); }} />}
       />
@@ -95,8 +97,8 @@ const Home = () => {
         />
         <VStack gap={12} mt={40}>
           <View style={{ paddingHorizontal: 14, flexDirection: 'row', justifyContent: 'space-between' }}>
-            <Text style={{ fontSize: 20, fontWeight: 'medium', fontFamily: 'Roboto-Black' }}>List of deals of the week</Text>
-            <Text style={{ fontSize: 14, fontWeight: 400, color: '#959597' }}>See all</Text>
+            <Text style={{ fontSize: 18, fontFamily: 'Roboto-Regular400' }}>List of deals of the week</Text>
+            <Text style={{ fontSize: 14, fontFamily: 'Roboto-Regular400', color: '#959597' }}>See all</Text>
           </View>
           <FlatList
             data={data_products || []}
@@ -115,7 +117,7 @@ const Home = () => {
         </VStack>
         <VStack gap={12} mt={20}>
           <View style={{ paddingHorizontal: 14, flexDirection: 'row', justifyContent: 'space-between' }}>
-            <Text style={{ fontSize: 20, fontWeight: 400 }}>Promo by category</Text>
+            <Text style={{ fontSize: 18, fontWeight: 400 }}>Promo by category</Text>
             <Text style={{ fontSize: 14, fontWeight: 400, color: '#959597' }}>See all</Text>
           </View>
           <FlatList
@@ -160,7 +162,6 @@ const themedStyles = StyleService.create({
     flex: 1,
     borderRadius: 16,
     marginTop: 10,
-    ...FONTS['400']
   },
   passwordInput: {
     flex: 1,

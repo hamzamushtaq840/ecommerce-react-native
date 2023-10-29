@@ -9,19 +9,22 @@ const TabBar = ({ style, activeIndex, onChange, tabs }) => {
   const theme = useTheme();
   const AniButton = Animated.createAnimatedComponent(TouchableOpacity);
   const { width } = useLayout();
+  const refScrollView = React.useRef(null);
+
   const changeIndex = React.useCallback(
     (i) => {
       return onChange(i);
     },
     [activeIndex],
   );
-  const refScrollView = React.useRef(null);
+
   React.useEffect(() => {
     refScrollView.current?.scrollTo({
       x: activeIndex * 120 + 8 - (width - 250) / 2,
       animated: true,
     });
   }, [activeIndex]);
+
   return (
     <View >
       <ScrollView
@@ -50,7 +53,7 @@ const TabBar = ({ style, activeIndex, onChange, tabs }) => {
               onPress={() => changeIndex(index)}
               activeOpacity={0.7}>
               <Image source={require('./../assets/icons/cup.png')} style={{ width: 20, height: 20 }} />
-              <Text style={{ color: isActive && '#ffffff' }} capitalize category="s1" >
+              <Text style={{ color: isActive ? '#ffffff' : '#959597', fontFamily: 'Roboto-Medium500', paddingTop: 4 }} category="s1" >
                 {item}
               </Text>
             </AniButton>

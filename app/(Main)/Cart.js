@@ -261,7 +261,7 @@ const Home = () => {
       </ScrollView>
 
       <Animated.View style={[{ position: 'absolute', bottom: 64, width: width, paddingHorizontal: 28, paddingVertical: 20, height: 240 }]} >
-        <Text style={{ fontWeight: 'bold', fontSize: 14, color: '#959597', lineHeight: 20 }}>PAYMENT DETAILS</Text>
+        <Text style={{ fontFamily: 'Roboto-Bold700', fontSize: 14, color: '#959597', lineHeight: 20 }}>PAYMENT DETAILS</Text>
 
         <VStack style={{ marginTop: 16 }} gap={8}>
           <HStack >
@@ -289,7 +289,7 @@ const Home = () => {
           <Button
             status={'primary'}
             // size={'small'}
-            style={{ width: '50%', textColor: 'white', alignSelf: 'center' }}
+            style={{ width: '50%', textColor: 'white', alignSelf: 'center', fontFamily: 'Roboto-Bold700' }}
             children={'Book Now'}
           />
         </HStack>

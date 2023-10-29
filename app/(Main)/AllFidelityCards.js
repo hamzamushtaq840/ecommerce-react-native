@@ -76,25 +76,57 @@ const AllFidelityCards = () => {
         <Text style={{ fontSize: 14, color: '#959597', paddingHorizontal: 12, lineHeight: 24, marginBottom: 16 }}>ACTIVITY</Text>
 
         <VStack gap={10}>
-          <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 24, paddingVertical: 19, borderRadius: 16, backgroundColor: '#F0F0F0' }}>
+          <View style={{
+            flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 24, paddingVertical: 19, borderRadius: 16, shadowColor: "#ccc",
+            shadowOffset: {
+              width: 0,
+              height: 1,
+            },
+            shadowOpacity: 0.5,
+            elevation: 3,
+          }}>
             <Text style={{ alignSelf: 'center', color: 'black' }}>Domino’s Pizza</Text>
             <View style={{ borderWidth: 1, borderColor: 'black', borderRadius: 12, paddingHorizontal: 16 }}>
               <Text style={{ alignSelf: 'center', color: 'black' }}>645</Text>
             </View>
           </View>
-          <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 24, paddingVertical: 19, borderRadius: 16, backgroundColor: '#F0F0F0' }}>
+          <View style={{
+            flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 24, paddingVertical: 19, borderRadius: 16, shadowColor: "#ccc",
+            shadowOffset: {
+              width: 0,
+              height: 1,
+            },
+            shadowOpacity: 0.5,
+            elevation: 3,
+          }}>
             <Text style={{ alignSelf: 'center', color: 'black' }}>Domino’s Pizza</Text>
             <View style={{ borderWidth: 1, borderColor: 'black', borderRadius: 12, paddingHorizontal: 16 }}>
               <Text style={{ alignSelf: 'center', color: 'black' }}>645</Text>
             </View>
           </View>
-          <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 24, paddingVertical: 19, borderRadius: 16, backgroundColor: '#F0F0F0' }}>
+          <View style={{
+            flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 24, paddingVertical: 19, borderRadius: 16, shadowColor: "#ccc",
+            shadowOffset: {
+              width: 0,
+              height: 1,
+            },
+            shadowOpacity: 0.5,
+            elevation: 3,
+          }}>
             <Text style={{ alignSelf: 'center', color: 'black' }}>Domino’s Pizza</Text>
             <View style={{ borderWidth: 1, borderColor: 'black', borderRadius: 12, paddingHorizontal: 16 }}>
               <Text style={{ alignSelf: 'center', color: 'black' }}>645</Text>
             </View>
           </View>
-          <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 24, paddingVertical: 19, borderRadius: 16, backgroundColor: '#F0F0F0' }}>
+          <View style={{
+            flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 24, paddingVertical: 19, borderRadius: 16, shadowColor: "#ccc",
+            shadowOffset: {
+              width: 0,
+              height: 1,
+            },
+            shadowOpacity: 0.5,
+            elevation: 3,
+          }}>
             <Text style={{ alignSelf: 'center', color: 'black' }}>Domino’s Pizza</Text>
             <View style={{ borderWidth: 1, borderColor: 'black', borderRadius: 12, paddingHorizontal: 16 }}>
               <Text style={{ alignSelf: 'center', color: 'black' }}>645</Text>

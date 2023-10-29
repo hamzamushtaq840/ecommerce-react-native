@@ -1,23 +1,33 @@
 {
   "version": 1.0,
   "strict": {
-    "text-font-family": "Roboto-Thin100",
+    "text-font-family": "Roboto-Regular400",
+    "text-font-family-medium": "Roboto-Medium500",
+    "text-font-family-bold": "Roboto-Bold700",
     "text-giant-0-font-size": 48,
     "text-giant-0-font-weight": "700",
+    "text-giant-0-font-family": "$text-font-family-bold",
     "text-heading-0-font-size": 36,
     "text-heading-0-font-weight": "700",
+    "text-heading-0-font-family": "$text-font-family-bold",
     "text-heading-1-font-size": 32,
     "text-heading-1-font-weight": "700",
+    "text-heading-1-font-family": "$text-font-family-bold",
     "text-heading-2-font-size": 28,
     "text-heading-2-font-weight": "700",
+    "text-heading-2-font-family": "$text-font-family-bold",
     "text-heading-3-font-size": 24,
     "text-heading-3-font-weight": "700",
+    "text-heading-3-font-family": "$text-font-family-bold",
     "text-heading-4-font-size": 18,
     "text-heading-4-font-weight": "700",
+    "text-heading-4-font-family": "$text-font-family-bold",
     "text-heading-5-font-size": 16,
     "text-heading-5-font-weight": "700",
+    "text-heading-5-font-family": "$text-font-family-bold",
     "text-heading-6-font-size": 14,
     "text-heading-6-font-weight": "700",
+    "text-heading-6-font-family": "$text-font-family-bold",
     "text-body-1-font-size": 16,
     "text-body-1-font-weight": "400",
     "text-body-1-font-family": "$text-font-family",
@@ -425,6 +435,7 @@
               "primary": {
                 "borderColor": "color-primary-default-border",
                 "backgroundColor": "color-primary-default",
+                "textFontFamily": "Roboto-Bold700",
                 "textColor": "#ffffff",
                 "iconTintColor": "text-basic-color",
                 "state": {
@@ -1919,10 +1930,10 @@
             "labelMarginBottom": 8,
             "labelFontSize": "text-label-font-size",
             "labelFontWeight": "text-label-font-weight",
-            "labelFontFamily": "text-label-font-family",
+            "labelFontFamily": "text-font-family",
             "captionFontSize": "text-caption-1-font-size",
             "captionFontWeight": "text-caption-1-font-weight",
-            "captionFontFamily": "text-caption-1-font-family"
+            "captionFontFamily": "text-font-family"
           },
           "variantGroups": {
             "status": {
@@ -4468,14 +4479,11 @@
             "minHeight": 56,
             "paddingVertical": 8,
             "paddingHorizontal": 16,
+            "titleFontSize":18,
             "backgroundColor": "background-basic-color-1",
-            "titleFontSize": "text-heading-5-font-size",
-            "titleFontWeight": "text-heading-5-font-weight",
-            "titleFontFamily": "text-heading-5-font-family",
+            "titleFontFamily": "text-font-family-medium",
             "titleColor": "text-basic-color",
-            "subtitleFontSize": "text-caption-1-font-size",
-            "subtitleFontWeight": "text-caption-1-font-weight",
-            "subtitleFontFamily": "text-caption-1-font-family",
+            "subtitleFontFamily": "text-font-family-medium",
             "subtitleColor": "text-hint-color"
           },
           "variantGroups": {
