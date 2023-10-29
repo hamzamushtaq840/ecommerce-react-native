@@ -59,8 +59,8 @@ const SingleProductDetail = () => {
         <TopNavigation
           alignment="start"
           title={<Text fontWeight="bold">Promo Details</Text>}
-          accessoryLeft={<NavigationAction marginHorizontal={6} height={16} width={20} icon="menu" onPress={() => { console.log("menu"); }} />}
-          accessoryRight={<NavigationAction marginHorizontal={6} height={20} width={16} icon="notifications" onPress={() => { console.log("notification"); }} />}
+          accessoryLeft={<NavigationAction marginRight={20} height={16} width={20} icon="back" onPress={() => { console.log("menu"); }} />}
+          accessoryRight={<NavigationAction marginHorizontal={6} height={16} width={4} icon="dots" onPress={() => { console.log("notification"); }} />}
         />
         <Image
           source={{ uri: 'https://justcreative.com/wp-content/uploads/2016/06/Simple-Design-Tips-for-Non-Designers.jpg' }}
@@ -69,24 +69,24 @@ const SingleProductDetail = () => {
       </Content>
 
       <Animated.View style={[{ position: 'absolute', bottom: 0, width: width, borderTopLeftRadius: 24, borderTopRightRadius: 24, padding: 24, backgroundColor: 'white' }, { height: heightAnim }]} >
-        <Text style={{ fontWeight: 'bold', fontSize: 22, marginBottom: 8 }}>Grow Your Bussiness</Text>
+        <Text style={{ fontFamily: 'Roboto-Bold700', fontSize: 22, marginBottom: 14 }}>Grow Your Bussiness</Text>
 
         <HStack justify='space-between' style={{ width: '100%' }}>
           <VStack>
-            <HStack justify='flex-start' gap={8}>
-              <Icon name="heart" style={{ width: 24, height: 24 }} color="red" />
+            <HStack itemsCenter justify='flex-start' gap={8}>
+              <Icon name="calendar" style={{ width: 12, height: 12 }} color="red" />
               <Text>01.06.2023 - 30.06.2023</Text>
             </HStack>
-            <HStack justify='flex-start' gap={8}>
-              <Icon name="heart" style={{ width: 24, height: 24 }} color="red" />
+            <HStack itemsCenter justify='flex-start' gap={8}>
+              <Icon name="link" style={{ width: 12, height: 12 }} color="red" />
               <Text>www.yourwebsitelink.com</Text>
             </HStack>
-            <HStack justify='flex-start' gap={8}>
-              <Icon name="heart" style={{ width: 24, height: 24 }} color="red" />
+            <HStack itemsCenter justify='flex-start' gap={8}>
+              <Icon name="phone" style={{ width: 16, height: 16 }} color="red" />
               <Text>070 000 0000</Text>
             </HStack>
-            <HStack justify='flex-start' gap={8}>
-              <Icon name="heart" style={{ width: 24, height: 24 }} color="red" />
+            <HStack itemsCenter justify='flex-start' gap={8}>
+              <Icon name="location" style={{ width: 16, height: 16 }} color="red" />
               <Text>South Valley, New Mexico</Text>
             </HStack>
           </VStack>
@@ -114,7 +114,7 @@ const SingleProductDetail = () => {
         </TouchableOpacity>
 
         <HStack style={{ alignItems: 'center' }}>
-          <Text lineHeight={32} style={{ fontSize: 32, fontWeight: 'bold' }}>$175.00</Text>
+          <Text lineHeight={32} style={{ fontSize: 32, fontFamily: 'Roboto-Bold700', }}>$175.00</Text>
           <Button
             status={'primary'}
             size={'small'}

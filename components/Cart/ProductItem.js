@@ -15,9 +15,9 @@ const ProductItem = ({ item, onPress, style }) => {
       onPress={onPress}>
       <Image source={{ uri: image }} style={styles.image} />
       <View style={styles.content}>
-        <Text category="h5">{name}</Text>
+        <Text style={{ fontFamily: 'Roboto-Medium500' }} >{name}</Text>
         <View style={styles.row1}>
-          <Text style={{ fontWeight: 'bold', fontSize: 16, lineHeight: 24 }}>
+          <Text style={{ fontFamily: 'Roboto-Medium500', fontSize: 16, lineHeight: 24 }}>
             $175.00
           </Text>
           <Icon name="delete" style={{ width: 24, height: 24 }} color="red" />

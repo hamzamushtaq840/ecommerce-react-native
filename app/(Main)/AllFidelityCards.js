@@ -1,11 +1,10 @@
-import { StyleService, TopNavigation, useStyleSheet } from '@ui-kitten/components';
+import { StyleService, TopNavigation, useStyleSheet, Text } from '@ui-kitten/components';
 import { useRouter } from 'expo-router';
 import React, { useState } from 'react';
 import { View } from 'react-native';
 import Container from '../../components/Generic/Container';
 import HStack from '../../components/Generic/HStack';
 import VStack from '../../components/Generic/VStack';
-import Text from '../../components/Generic/Text';
 import Content from './../../components/Generic/Content';
 import NavigationAction from './../../components/Generic/NavigationAction';
 import QRCode from 'react-native-qrcode-svg';
@@ -45,7 +44,7 @@ const AllFidelityCards = () => {
         <View style={{ marginTop: 16, marginBottom: 40, width: '100%', height: 220, backgroundColor: 'black', borderRadius: 16, backgroundColor: "#3D195B", justifyContent: 'center', paddingHorizontal: 16, paddingTop: 32, paddingBottom: 40 }}>
           <VStack gap={40}>
             <HStack itemsCenter>
-              <Text style={{ fontSize: 32, fontWeight: 'bold', color: 'white', lineHeight: 40 }}>Apple Store</Text>
+              <Text style={{ fontSize: 32, color: 'white', lineHeight: 40, fontFamily: 'Roboto-Bold700' }}>Apple Store</Text>
               <View style={styles.qrCodeContainer}>
                 <QRCode
                   value={'hello'}
@@ -77,7 +76,7 @@ const AllFidelityCards = () => {
 
         <VStack gap={10}>
           <View style={{
-            flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 24, paddingVertical: 19, borderRadius: 16, shadowColor: "#ccc",
+            flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 24, paddingVertical: 22, borderRadius: 16, shadowColor: "#ccc",
             shadowOffset: {
               width: 0,
               height: 1,
@@ -91,7 +90,7 @@ const AllFidelityCards = () => {
             </View>
           </View>
           <View style={{
-            flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 24, paddingVertical: 19, borderRadius: 16, shadowColor: "#ccc",
+            flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 24, paddingVertical: 22, borderRadius: 16, shadowColor: "#ccc",
             shadowOffset: {
               width: 0,
               height: 1,
@@ -105,7 +104,7 @@ const AllFidelityCards = () => {
             </View>
           </View>
           <View style={{
-            flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 24, paddingVertical: 19, borderRadius: 16, shadowColor: "#ccc",
+            flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 24, paddingVertical: 22, borderRadius: 16, shadowColor: "#ccc",
             shadowOffset: {
               width: 0,
               height: 1,
@@ -119,7 +118,7 @@ const AllFidelityCards = () => {
             </View>
           </View>
           <View style={{
-            flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 24, paddingVertical: 19, borderRadius: 16, shadowColor: "#ccc",
+            flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 24, paddingVertical: 22, borderRadius: 16, shadowColor: "#ccc",
             shadowOffset: {
               width: 0,
               height: 1,
@@ -132,9 +131,10 @@ const AllFidelityCards = () => {
               <Text style={{ alignSelf: 'center', color: 'black' }}>645</Text>
             </View>
           </View>
+
         </VStack>
       </Content>
-    </Container>
+    </Container >
   )
 }
 

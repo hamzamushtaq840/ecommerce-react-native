@@ -1,16 +1,11 @@
-import React from 'react'
-import { View } from 'react-native'
+import { Button, StyleService, TopNavigation, useStyleSheet, Text } from '@ui-kitten/components';
+import { useRouter } from 'expo-router';
+import React from 'react';
+import { Image } from 'react-native';
 import Container from '../../components/Generic/Container';
-import VStack from '../../components/Generic/VStack';
-import Navbar from '../../components/Navbar';
+import { Images } from './../../assets/images';
 import Content from './../../components/Generic/Content';
 import NavigationAction from './../../components/Generic/NavigationAction';
-import useLayout from '../../hooks/useLayout';
-import { Images } from './../../assets/images'
-import { Input, TopNavigation, useStyleSheet, StyleService, Button } from '@ui-kitten/components';
-import Text from '../../components/Generic/Text';
-import { Image } from 'react-native';
-import { useRouter } from 'expo-router';
 
 const FidelityCard = () => {
   const styles = useStyleSheet(themedStyles);
@@ -30,12 +25,13 @@ const FidelityCard = () => {
           source={Images.fidelity.card}
           style={{ width: 200, height: 116, marginBottom: 64 }}
         />
-        <Text style={{ fontSize: 22, fontWeight: 'medium', marginBottom: 16 }}>Don’t have any card</Text>
-        <Text style={{ fontSize: 16, fontWeight: 'medium', marginBottom: 16, textAlign: 'center', color: '#959597', width: 300 }}>It’s seems like you don't add any cards.
+        <Text style={{ fontSize: 22, fontFamily: 'Roboto-Medium500', marginBottom: 16 }}>Don’t have any card</Text>
+        <Text style={{ fontSize: 16, fontFamily: 'Roboto-Regular400', marginBottom: 16, textAlign: 'center', color: '#959597', width: 300 }}>It’s seems like you don't add any cards.
           Add card easily in few steps!</Text>
         <Button
           status={'primary'}
           // size={'small'}
+          textFontFamily={'Roboto-Bold500'}
           style={{ width: '50%', textColor: 'white', alignSelf: 'center', marginTop: 80 }}
           children={'Add New Card'}
           onPress={() => {

@@ -1,17 +1,16 @@
-import { Button, Input, TopNavigation } from '@ui-kitten/components';
-import { Camera } from 'expo-camera';
-import { default as React, useEffect, useRef, useState } from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
-import QRCode from 'react-native-qrcode-svg';
-import Container from '../../components/Generic/Container';
-import VStack from '../../components/Generic/VStack';
-import HStack from '../../components/Generic/HStack';
-import Navbar from '../../components/Navbar';
-import Content from './../../components/Generic/Content';
+import { Button, Input, TopNavigation, Text } from '@ui-kitten/components';
 import { BlurView } from 'expo-blur';
-import NavigationAction from './../../components/Generic/NavigationAction';
-import { Images } from '../../assets/images';
+import { Camera } from 'expo-camera';
 import { useRouter } from 'expo-router';
+import { default as React, useEffect, useRef, useState } from 'react';
+import { Image, StyleSheet, View } from 'react-native';
+import QRCode from 'react-native-qrcode-svg';
+import { Images } from '../../assets/images';
+import Container from '../../components/Generic/Container';
+import HStack from '../../components/Generic/HStack';
+import VStack from '../../components/Generic/VStack';
+import Content from './../../components/Generic/Content';
+import NavigationAction from './../../components/Generic/NavigationAction';
 
 const NewCard = () => {
   const [hasPermission, setHasPermission] = useState('');
@@ -72,14 +71,14 @@ const NewCard = () => {
           width: '50%', borderBottomColor: "#F0F0F0",
           borderBottomWidth: 1, paddingVertical: 12
         }}>
-          <Text style={{ alignSelf: 'center' }}>App Cards</Text>
+          <Text style={{ alignSelf: 'center', fontSize: 16 }}>App Cards</Text>
           {current === 'appCards' && <View style={{ width: '100%', height: 2, position: 'absolute', bottom: 0, backgroundColor: 'black' }}></View>}
         </View>
         <View onStartShouldSetResponder={() => { setCurrent('3rdPartyCards') }} style={{
           width: '50%', justifyContent: 'center', borderBottomColor: "#F0F0F0",
           borderBottomWidth: 1, paddingVertical: 12
         }}>
-          <Text style={{ alignSelf: 'center' }}>3rd Party Cards</Text>
+          <Text style={{ alignSelf: 'center', fontSize: 16 }}>3rd Party Cards</Text>
           {current === '3rdPartyCards' && <View style={{ width: '100%', height: 2, position: 'absolute', bottom: 0, backgroundColor: 'black' }}></View>}
         </View>
       </HStack>
@@ -110,7 +109,7 @@ const NewCard = () => {
                   <Text style={{ color: 'white', width: 100, textAlign: 'center' }}>
                     Tap to scan
                   </Text>
-                  <Text style={{ color: 'white', width: 100, textAlign: 'center' }}>
+                  <Text style={{ color: 'white', width: 150, textAlign: 'center' }}>
                     QR or Barcode
                   </Text>
                 </View>}

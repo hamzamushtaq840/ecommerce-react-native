@@ -30,6 +30,11 @@ const IconsPack = {
     'heart': createIcon(Icons['heart']),
     'profile': createIcon(Icons['profile']),
     'delete': createIcon(Icons['delete']),
+    'location': createIcon(Icons['location']),
+    'link': createIcon(Icons['link']),
+    'phone': createIcon(Icons['phone']),
+    'calendar': createIcon(Icons['calendar']),
+    'dots': createIcon(Icons['dots']),
   },
 };
 export default IconsPack;
