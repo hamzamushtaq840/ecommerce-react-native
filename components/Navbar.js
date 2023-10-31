@@ -39,14 +39,14 @@ const Navbar = ({ style }) => {
         <Icon
           pack="assets"
           name="comment"
-          style={[{ height: 20, width: 20 }, { tintColor: pathname === '/Profile' && theme['color-primary-500'] }]}
+          style={[{ height: 20, width: 20 }, { tintColor: pathname === '/NewCard' && theme['color-primary-500'] }]}
         />
       </TouchableOpacity>
       <TouchableOpacity onPress={() => router.push('(Main)/Profile')} activeOpacity={0.7} style={styles.tab}>
         <Icon
           pack="assets"
           name="profile"
-          style={[styles.icon, { tintColor: pathname === '/NewCard' && theme['color-primary-500'] }]}
+          style={[styles.icon, { tintColor: pathname === '/Profile' && theme['color-primary-500'] }]}
         />
       </TouchableOpacity>
     </Layout>

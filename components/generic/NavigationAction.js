@@ -100,7 +100,7 @@ const NavigationAction = memo(
           <Icon
             {...props}
             pack="assets"
-            name={icon || 'arrow-left'}
+            name={icon || 'back'}
             style={[
               {
                 height: height,
