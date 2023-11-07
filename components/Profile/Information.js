@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { ImageRequireSource } from 'react-native';
+import { Image, ImageRequireSource } from 'react-native';
 // ----------------------------- UI kitten -----------------------------------
 import {
   StyleService,
@@ -7,6 +7,7 @@ import {
   Avatar,
   Icon,
   Button,
+  Input,
 } from '@ui-kitten/components';
 import { Images } from './../../assets/images';
 import Text from '../Generic/Text';
@@ -19,25 +20,27 @@ const Information = memo(({ user }) => {
   return (
     <VStack level="2" style={{ backgroundColor: 'white' }} border={16} mh={4}>
       <IDivider />
-      <VStack gap={16} margin={16}>
-        <HStack justify="flex-start">
-          <HStack gap={4} itemsCenter mr={16}>
-            <Text category="h6">{user.following}</Text>
-            <Text category="subhead">Following</Text>
-          </HStack>
-          <HStack gap={4} itemsCenter>
-            <Text category="h6">{user.follower}</Text>
-            <Text category="subhead">Follower</Text>
-          </HStack>
-        </HStack>
-        <Text category="subhead" status="platinum">
-          {user.desc}
-        </Text>
-        <HStack itemsCenter justify="flex-start">
-          <Text category="subhead">{user.address}</Text>
-        </HStack>
-      </VStack>
-
+       <VStack >
+         <VStack padder border={10} style={{ marginTop: 20 }} gap={4}>
+            <Text style={{ fontSize: 14, color: '#959597', lineHeight: 24 }}>Name</Text>
+            <Input
+              placeholder={'Add a store name'}
+              value='John Doe'
+              accessoryLeft={<Image source={require('./../../assets/icons/store.png')} marginHorizontal={10} style={{ width: 10, height: 10 }} />}
+              style={styles.userInput}
+            />
+          </VStack>
+         <VStack padder border={10} style={{ marginTop: 10 }} gap={4}>
+            <Text style={{ fontSize: 14, color: '#959597', lineHeight: 24 }}>Email</Text>
+            <Input
+              placeholder={'Add a store name'}
+              disabled
+              value='dummy@gmail.com'
+              accessoryLeft={<Image source={require('./../../assets/icons/store.png')} marginHorizontal={10} style={{ width: 10, height: 10 }} />}
+              style={styles.userInput}
+            />
+          </VStack>
+       </VStack>
     </VStack>
   );
 });

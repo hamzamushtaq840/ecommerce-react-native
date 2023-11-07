@@ -7,12 +7,12 @@ import Text from '../../components/Generic/Text'
 import VStack from '../../components/Generic/VStack'
 import ProductItem from '../../components/Home/ProductItem'
 import Navbar from '../../components/Navbar'
-import { FONTS } from '../../constants/theme'
 import useLayout from '../../hooks/useLayout'
 import { Images } from './../../assets/images'
 import Content from './../../components/Generic/Content'
 import NavigationAction from './../../components/Generic/NavigationAction'
 import TabBarScrollable from './../../elements/TabBarScrollable'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 
 export const data_products = [
   {
@@ -75,8 +75,6 @@ const Home = () => {
       paddingBottom: 0,
     }}>
       <TopNavigation
-        titleFontFamily='Roboto-Bold700'
-        subtitleFontFamily='Roboto-Bold700'
         alignment="center"
         title={<Text>Home</Text>}
         accessoryLeft={<NavigationAction marginHorizontal={6} height={16} width={20} icon="menu" onPress={() => { console.log("menu"); }} />}
@@ -91,9 +89,15 @@ const Home = () => {
           />
         </VStack>
         <TabBarScrollable tabs={DATA} activeIndex={selected} onChange={setSelected} style={styles.tabBar} />
+         <View style={{ paddingHorizontal: 14, flexDirection: 'row', justifyContent: 'flex-end',marginTop: 15 }}>
+          <TouchableOpacity onPress={() => {
+            router.push('(Main)/SpinWheel')}}>
+            <Text style={{ fontSize: 14, fontFamily: 'Roboto-Regular400', color: '#959597' }}>{`Try your luck >`}</Text>
+          </TouchableOpacity>
+          </View>
         <Image
           source={Images.home.banner}
-          style={{ width: width, height: 240, alignSelf: 'center', marginTop: 32 }}
+          style={{ width: width, height: 240, alignSelf: 'center', marginTop: 5 }}
         />
         <VStack gap={12} mt={40}>
           <View style={{ paddingHorizontal: 14, flexDirection: 'row', justifyContent: 'space-between' }}>

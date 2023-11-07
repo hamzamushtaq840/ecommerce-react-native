@@ -50,20 +50,20 @@ const Profile10 = memo(() => {
             }}
           />
         </VStack>
-      </Content>
-      <HStack style={styles.bottom} mh={16} mb={8}>
-        <VStack rowGap={16}>
-          <Text category="h6" status="platinum">
-            Help Center
-          </Text>
-          <Text category="h6" status="platinum">
-            Logout
-          </Text>
-        </VStack>
-        <Text category="h6" status="platinum">
-          Feb 2021
+        <Button
+          status={'primary'}
+          // size={'small'}
+          textFontFamily={'Roboto-Bold500'}
+          style={{ width: '50%', textColor: 'white', alignSelf: 'center', marginTop: 40 }}
+          children={'Update'}
+        />
+        <Text
+          style={{ alignSelf: 'center', marginTop: 80 }}
+          category="h6" >
+          Logout
         </Text>
-      </HStack>
+      </Content>
+
       <Navbar />
     </Container>
   );
