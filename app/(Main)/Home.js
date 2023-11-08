@@ -88,7 +88,7 @@ const Home = () => {
     translationX.value = event.contentOffset.x;
   });
   const numImages = data_images.length;
-  const autoSlideDelay = 4500; // 3 seconds delay for auto-sliding
+  const autoSlideDelay = 3000; // 3 seconds delay for auto-sliding
 
   // Function to go to the next slide
   const goToNextSlide = () => {
@@ -107,10 +107,11 @@ const Home = () => {
 
   React.useEffect(() => {
     let interval;
-    interval = setInterval(() => {
+    if(isAutoSliding)
+    {interval = setInterval(() => {
       goToNextSlide();
     }, autoSlideDelay);
-
+}
     // Cleanup the interval on component unmount or when isAutoSliding changes
     return () => interval && clearInterval(interval);
   }, [isAutoSliding, numImages]);
@@ -119,12 +120,6 @@ const Home = () => {
   const onScrollEnd = React.useCallback((event) => {
     // // Clear auto-sliding when the user manually swipes
     setIsAutoSliding(false);
-
-    // Calculate the index based on event data
-    let e = event.nativeEvent.contentOffset.x;
-    const newIndex = Math.round(e / width); // Use Math.round to ensure proper index on fast swipes
-    setIndex(newIndex);
-
 
   }, [width, autoSlideDelay]);
 
