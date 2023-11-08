@@ -11,6 +11,7 @@ import useLayout from '../../hooks/useLayout';
 import Svg, { Path } from "react-native-svg";
 import { useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
 import { TouchableOpacity } from 'react-native';
+import { useLocalSearchParams, useRouter } from 'expo-router';
 
 const SVGComponent = (props) => (
   <Svg
@@ -33,6 +34,8 @@ const SingleProductDetail = () => {
   const [maximize, setMaximize] = useState(false);
   const heightAnim = useRef(new Animated.Value(360)).current;
   const text = 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis iste quaerat atque libero et dolores sed, ipsa incidunt veniam deserunt voluptatum! Neque quam culpa ad! Vitae tempore, natus praesentium quasi dignissimos aut nam quibusdam aperiam placeat voluptatibus qui sapiente quo inventore nemo quos id incidunt quaerat sed itaque repellat, est, consectetur rem. Exercitationem rerum minima aliquid rem aspernatur quasi id, temporibus quod, enim qui expedita debitis provident dolore vero beatae dolorum cum est voluptatibus dignissimos? Minima voluptates sint, vero minus qui doloremque sequi expedita error non dolorum tempore hic itaque facilis maxime natus, dignissimos, labore quia cumque? Saepe, similique explicabo';
+  const item = useLocalSearchParams();
+  const router = useRouter()
 
   const handlePress = () => {
     if (maximize === false) {
@@ -59,11 +62,11 @@ const SingleProductDetail = () => {
         <TopNavigation
           alignment="start"
           title={<Text fontWeight="bold">Promo Details</Text>}
-          accessoryLeft={<NavigationAction marginRight={20} height={16} width={20} icon="back" onPress={() => { console.log("menu"); }} />}
+          accessoryLeft={<NavigationAction marginRight={20} height={16} width={20} icon="back" onPress={() => { router.back(); }} />}
           accessoryRight={<NavigationAction marginHorizontal={6} height={16} width={4} icon="dots" onPress={() => { console.log("notification"); }} />}
         />
         <Image
-          source={{ uri: 'https://justcreative.com/wp-content/uploads/2016/06/Simple-Design-Tips-for-Non-Designers.jpg' }}
+          source={{ uri: item?.image }}
           style={{ width: width, height: 412, alignSelf: 'center' }}
         />
       </Content>

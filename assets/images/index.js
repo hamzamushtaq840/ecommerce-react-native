@@ -2,6 +2,9 @@ export const Images = {
   // rounded: require('./profile/img_rounded.png'),
   home: {
     banner: require('./home/banner.png'),
+    banner2: require('./home/banner2.jpg'),
+    banner3: require('./home/banner3.jpg'),
+    banner4: require('./home/banner4.jpg'),
   },
   fidelity: {
     card: require('./fidelity/Card.png'),

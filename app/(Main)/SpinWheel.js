@@ -4,9 +4,11 @@ import { StyleSheet, View, Text, TouchableOpacity, Animated, Easing } from 'reac
 import Svg, { Path, G, Text as SvgText, Image } from 'react-native-svg';
 import NavigationAction from '../../components/Generic/NavigationAction';
 import Container from '../../components/Generic/Container';
+import { useRouter } from 'expo-router';
 
 const SpinWheel = () => {
   const spinValue = useRef(new Animated.Value(0)).current;
+  const router = useRouter()
   const [angle, setAngle] = useState(0);
 
   const interpolateInverseSpinning = spinValue.interpolate({
@@ -56,7 +58,7 @@ const SpinWheel = () => {
        style={{width:'100%'}}
         alignment="center"
         title={<Text>Wheel of fortune</Text>}
-        accessoryLeft={<NavigationAction marginHorizontal={6} height={16} width={20} icon="back" onPress={() => { console.log("menu"); }} />}
+        accessoryLeft={<NavigationAction marginHorizontal={6} height={16} width={20} icon="back" onPress={() => { router.back(); }} />}
       />
       <View style={{justifyContent:'center',alignItems:'center',flex:1}}>
         <Animated.View style={{ transform: [{ rotate: interpolateSpinning }] }}>

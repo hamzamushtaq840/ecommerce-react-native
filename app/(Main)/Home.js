@@ -13,6 +13,12 @@ import Content from './../../components/Generic/Content'
 import NavigationAction from './../../components/Generic/NavigationAction'
 import TabBarScrollable from './../../elements/TabBarScrollable'
 import { TouchableOpacity } from 'react-native-gesture-handler'
+import Animated, {
+  useAnimatedRef,
+  useAnimatedScrollHandler,
+  useSharedValue,
+} from 'react-native-reanimated';
+import Dots from '../../components/Home/Dots'
 
 export const data_products = [
   {
@@ -59,14 +65,95 @@ export const data_products = [
   },
 ];
 
+export const data_images = [
+  Images.home.banner,
+  Images.home.banner2,
+  Images.home.banner3,
+  Images.home.banner4,
+];
+
 const Home = () => {
   const { width } = useLayout();
   const styles = useStyleSheet(themedStyles);
   const [selected, setSelected] = React.useState(0);
   const router = useRouter()
+  const translationX = useSharedValue(0);
+  const scrollRef = useAnimatedRef();
+  const refScroll = React.useRef(null);
+  const [index, setIndex] = React.useState(0);
+  const [selectedIndex, setSelectedIndex] = React.useState(0);
+  const [isAutoSliding, setIsAutoSliding] = React.useState(true);
+
+  const scrollHandler = useAnimatedScrollHandler((event) => {
+    translationX.value = event.contentOffset.x;
+  });
+  const numImages = data_images.length;
+  const autoSlideDelay = 4500; // 3 seconds delay for auto-sliding
+
+  // Function to go to the next slide
+  const goToNextSlide = () => {
+    setIndex((prevIndex) => {
+      let nextIndex = prevIndex + 1;
+      if (prevIndex === numImages - 1) { // assuming your array is 0-indexed
+        nextIndex = 0;
+      }
+      scrollRef.current?.scrollToIndex({
+        index: nextIndex,
+        animated: true,
+      });
+      return nextIndex;
+    });
+  };
+
+  React.useEffect(() => {
+    let interval;
+    interval = setInterval(() => {
+      goToNextSlide();
+    }, autoSlideDelay);
+
+    // Cleanup the interval on component unmount or when isAutoSliding changes
+    return () => interval && clearInterval(interval);
+  }, [isAutoSliding, numImages]);
+
+  // When the user manually swipes the image, stop the auto-sliding and start it after a delay
+  const onScrollEnd = React.useCallback((event) => {
+    // // Clear auto-sliding when the user manually swipes
+    setIsAutoSliding(false);
+
+    // Calculate the index based on event data
+    let e = event.nativeEvent.contentOffset.x;
+    const newIndex = Math.round(e / width); // Use Math.round to ensure proper index on fast swipes
+    setIndex(newIndex);
+
+
+  }, [width, autoSlideDelay]);
+
+  React.useEffect(() => {
+    scrollRef.current?.scrollToIndex({
+      index: index,
+      animated: true,
+    });
+  }, [index]);
+
+  React.useEffect(() => {
+    refScroll.current?.scrollToIndex({
+      index: selectedIndex,
+      animated: true,
+      viewPosition: 0.5,
+    });
+  }, [selectedIndex]);
+
+
+  const renderItem = React.useCallback(({ item }) => {
+    return (
+      <View style={[styles.imageView, { width }]}>
+        <Image source={item} resizeMode="contain" style={styles.image} />
+      </View>
+    );
+  }, []);
 
   const renderProduct = React.useCallback(({ item }) => {
-    return <ProductItem onPress={() => router.push('(Main)/SingleProductDetail')} item={item} style={styles.itemProduct} />;
+    return <ProductItem onPress={() => router.push({ pathname: '(Main)/SingleProductDetail', params: item })} item={item} style={styles.itemProduct} />;
   }, []);
 
   return (
@@ -89,17 +176,35 @@ const Home = () => {
           />
         </VStack>
         <TabBarScrollable tabs={DATA} activeIndex={selected} onChange={setSelected} style={styles.tabBar} />
-         <View style={{ paddingHorizontal: 14, flexDirection: 'row', justifyContent: 'flex-end',marginTop: 15 }}>
+        <View style={{ paddingHorizontal: 14, flexDirection: 'row', justifyContent: 'flex-end', marginTop: 15 }}>
           <TouchableOpacity onPress={() => {
-            router.push('(Main)/SpinWheel')}}>
+            router.push('(Main)/SpinWheel')
+          }}>
             <Text style={{ fontSize: 14, fontFamily: 'Roboto-Regular400', color: '#959597' }}>{`Try your luck >`}</Text>
           </TouchableOpacity>
+        </View>
+        <VStack mt={4} >
+          <Animated.FlatList
+            data={data_images}
+            scrollEventThrottle={16}
+            renderItem={renderItem}
+            ref={scrollRef}
+            showsHorizontalScrollIndicator={false}
+            horizontal
+            snapToInterval={width}
+            bounces={false}
+            pagingEnabled={false}
+            decelerationRate="fast"
+            onScroll={scrollHandler}
+            style={{ width: width }}
+            contentContainerStyle={{ width: width * data_images.length - 1 }}
+            onScrollEndDrag={(event) => onScrollEnd(event)}
+          />
+          <View style={styles.row}>
+            <Dots translationX={translationX} data={data_images} />
           </View>
-        <Image
-          source={Images.home.banner}
-          style={{ width: width, height: 240, alignSelf: 'center', marginTop: 5 }}
-        />
-        <VStack gap={12} mt={40}>
+        </VStack>
+        <VStack gap={12} mt={20}>
           <View style={{ paddingHorizontal: 14, flexDirection: 'row', justifyContent: 'space-between' }}>
             <Text style={{ fontSize: 18, fontFamily: 'Roboto-Regular400' }}>List of deals of the week</Text>
             <Text style={{ fontSize: 14, fontFamily: 'Roboto-Regular400', color: '#959597' }}>See all</Text>
@@ -148,6 +253,47 @@ const Home = () => {
 const DATA = ['Popular', 'Hot Today', 'Near by', 'Favorite', 'Best rate', 'Local'];
 
 const themedStyles = StyleService.create({
+  contentContainerStyle: {
+    paddingTop: 16,
+  },
+  right: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  imageView: {
+    height: 220,
+  },
+  image: {
+    width: '100%',
+    height: '100%',
+  },
+  box: {
+    height: 28,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: 8,
+    borderRadius: 28,
+  },
+  row: {
+    marginTop: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  play: {
+    width: 32,
+    height: 32,
+    borderRadius: 32,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  row1: {
+    flexDirection: 'row',
+  },
+  box1: {
+    marginTop: 32,
+    padding: 16,
+    borderRadius: 16,
+  },
   container: {
     flex: 1,
     paddingBottom: 0,

@@ -7,7 +7,23 @@
     "plugins": [
       "expo-router"
     ],
-    "name": "learn-react-native",
-    "slug": "learn-react-native"
+    "name": "fidelity",
+    "slug": "fidelity",
+    "splash":{
+      "image":"./assets/Logo.png",
+      "backgroundColor":"#3D195B",
+      "resizeMode":"contain"
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "fbc89990-bd95-48c5-aabb-2e7f10583eaa"
+      }
+    },
+    "android": {
+      "package": "com.hamzamushtaq840.fidelity"
+    }
   }
 }

@@ -64,7 +64,7 @@ const NewCard = () => {
       <TopNavigation
         alignment="start"
         title={<Text >Add New Card</Text>}
-        accessoryLeft={<NavigationAction marginRight={20} height={16} width={20} icon="back" onPress={() => { console.log("menu"); }} />}
+        accessoryLeft={<NavigationAction marginRight={20} height={16} width={20} icon="back" onPress={() => { router.back(); }} />}
       />
       <HStack padder mb={10}>
         <View onStartShouldSetResponder={() => { setCurrent('appCards') }} style={{

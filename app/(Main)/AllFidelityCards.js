@@ -21,7 +21,7 @@ const AllFidelityCards = () => {
       <TopNavigation
         alignment="start"
         title={<Text >Fidelity Cards</Text>}
-        accessoryLeft={<NavigationAction marginRight={20} height={16} width={20} icon="back" onPress={() => { console.log("menu"); }} />}
+        accessoryLeft={<NavigationAction marginRight={20} height={16} width={20} icon="back" onPress={() => { router.back(); }} />}
       />
       <Content contentContainerStyle={styles.content}>
         <HStack ph={8} mb={10}>

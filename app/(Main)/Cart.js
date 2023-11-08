@@ -9,6 +9,7 @@ import Text from '../../components/Generic/Text'
 import VStack from '../../components/Generic/VStack'
 import Navbar from '../../components/Navbar'
 import useLayout from '../../hooks/useLayout'
+import { useRouter } from 'expo-router'
 
 export const data_products = [
   {
@@ -233,6 +234,7 @@ const Home = () => {
   const { width, height } = useLayout();
   const styles = useStyleSheet(themedStyles);
   const [selected, setSelected] = React.useState(0);
+  const router = useRouter()
 
   const renderProduct = React.useCallback(({ item }) => {
     return <ProductItem item={item} style={styles.productItem} />;
@@ -246,7 +248,7 @@ const Home = () => {
       <TopNavigation
         alignment="center"
         title={<Text fontWeight="bold">Cart</Text>}
-        accessoryLeft={<NavigationAction marginRight={20} height={16} width={20} icon="back" onPress={() => { console.log("menu"); }} />}
+        accessoryLeft={<NavigationAction marginRight={20} height={16} width={20} icon="back" onPress={() => { router.back(); }} />}
         accessoryRight={<NavigationAction marginHorizontal={6} height={20} width={16} icon="notifications" onPress={() => { console.log("notification"); }} />}
       />
       <ScrollView style={{ flex: 1, maxHeight: height - 348, paddingHorizontal: 16 }}>

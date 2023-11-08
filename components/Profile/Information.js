@@ -8,6 +8,10 @@ import {
   Icon,
   Button,
   Input,
+  IndexPath,
+  Select,
+  SelectItem,
+  Layout,
 } from '@ui-kitten/components';
 import { Images } from './../../assets/images';
 import Text from '../Generic/Text';
@@ -16,31 +20,53 @@ import VStack from '../Generic/VStack';
 import IDivider from '../Generic/IDivider';
 
 const Information = memo(({ user }) => {
+  const data = [
+  'English',
+  'Spanish',
+];
+  const [selectedIndex, setSelectedIndex] = React.useState(new IndexPath(0));
+  const displayValue = data[selectedIndex.row];
   const styles = useStyleSheet(themedStyles);
   return (
     <VStack level="2" style={{ backgroundColor: 'white' }} border={16} mh={4}>
       <IDivider />
-       <VStack >
-         <VStack padder border={10} style={{ marginTop: 20 }} gap={4}>
-            <Text style={{ fontSize: 14, color: '#959597', lineHeight: 24 }}>Name</Text>
-            <Input
-              placeholder={'Add a store name'}
-              value='John Doe'
-              accessoryLeft={<Image source={require('./../../assets/icons/store.png')} marginHorizontal={10} style={{ width: 10, height: 10 }} />}
-              style={styles.userInput}
-            />
-          </VStack>
-         <VStack padder border={10} style={{ marginTop: 10 }} gap={4}>
-            <Text style={{ fontSize: 14, color: '#959597', lineHeight: 24 }}>Email</Text>
-            <Input
-              placeholder={'Add a store name'}
-              disabled
-              value='dummy@gmail.com'
-              accessoryLeft={<Image source={require('./../../assets/icons/store.png')} marginHorizontal={10} style={{ width: 10, height: 10 }} />}
-              style={styles.userInput}
-            />
-          </VStack>
-       </VStack>
+      <VStack >
+        <VStack padder border={10} style={{ marginTop: 20 }} gap={4}>
+          <Text style={{ fontSize: 14, color: '#959597', lineHeight: 24 }}>Name</Text>
+          <Input
+            placeholder={'Add a store name'}
+            value='John Doe'
+            accessoryLeft={<Image source={require('./../../assets/icons/store.png')} marginHorizontal={10} style={{ width: 10, height: 10 }} />}
+            style={styles.userInput}
+          />
+        </VStack>
+        <VStack padder border={10} style={{ marginTop: 10 }} gap={4}>
+          <Text style={{ fontSize: 14, color: '#959597', lineHeight: 24 }}>Email</Text>
+          <Input
+            placeholder={'Add a store name'}
+            disabled
+            value='dummy@gmail.com'
+            accessoryLeft={<Image source={require('./../../assets/icons/store.png')} marginHorizontal={10} style={{ width: 10, height: 10 }} />}
+            style={styles.userInput}
+          />
+        </VStack>
+        <VStack padder border={10} style={{ marginTop: 10 }} gap={4}>
+          <Text style={{ fontSize: 14, color: '#959597', lineHeight: 24 }}>Language</Text>
+          <Layout
+            style={styles.container}
+            level='1'
+          >
+            <Select
+              value={displayValue}
+              selectedIndex={selectedIndex}
+              onSelect={index => setSelectedIndex(index)}
+            >
+              <SelectItem title='English' />
+              <SelectItem title='Spanish' />
+            </Select>
+          </Layout>
+        </VStack>
+      </VStack>
     </VStack>
   );
 });
@@ -67,5 +93,8 @@ const themedStyles = StyleService.create({
     marginTop: -48,
     marginLeft: 16,
     marginBottom: 16,
+  },
+  container: {
+    minHeight: 128,
   },
 });

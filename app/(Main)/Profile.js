@@ -18,12 +18,12 @@ const Profile10 = memo(() => {
   return (
     <Container style={styles.container}>
       <VStack pt={top + 8} style={styles.header}>
-        <TopNavigation
+        {/* <TopNavigation
           appearance="control"
           title={'Profile Settings'}
           alignment="center"
           accessoryLeft={<NavigationAction />}
-        />
+        /> */}
       </VStack>
       <Content contentContainerStyle={styles.content}>
         <VStack itemsCenter style={styles.topContent}>
@@ -81,8 +81,6 @@ const themedStyles = StyleService.create({
     width: 387,
     height: 517,
   },
-  content: {
-  },
   button: {
     padding: 4,
     borderRadius: 12,
@@ -111,7 +109,7 @@ const themedStyles = StyleService.create({
   },
   topContent: {
     backgroundColor: '#3D195B',
-    paddingBottom: 32,
+    paddingVertical: 32,
     borderBottomLeftRadius: 16,
     borderBottomRightRadius: 16,
   },
